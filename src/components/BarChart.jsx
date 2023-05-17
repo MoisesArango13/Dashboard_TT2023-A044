@@ -1,18 +1,27 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
+
 //import { mockTransactions } from "../data/mockData";
 import axios from 'axios';
 import React, { useState, useEffect} from 'react';
 
 const BarChart = ({ datos, isDhasboard = false }) => {
   console.log(datos);
+
+//import { mockBarData as data } from "../data/mockData";
+import axios from 'axios';
+import React, { useState, useEffect} from 'react';
+
+const BarChart = ({ isDhasboard = false }) => {
+
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
     const [data, setData] = useState([]);
     
   useEffect(() => {
+
     const params = {
       tipo: datos[0],
       marca: datos[1]
@@ -55,6 +64,45 @@ const BarChart = ({ datos, isDhasboard = false }) => {
   
     return (
         
+
+    const params = {
+      tipo: '',
+      fecha_inicial: '2021-06-07',
+      fecha_final: '2021-07-24'
+    };
+    
+    axios.get('http://localhost:5000/efectos_por_mes', {params})
+      .then(response => {
+        const recordsets = response.data.recordset;
+        let mes = recordsets.map(value => value.mes);
+        let año = recordsets.map(value => value.año);
+        let total = recordsets.map(value => value.total);
+
+        const values = mes.map((label, index) => {
+          let fecha = label + "-" + año[index];
+          let efecto = params.tipo + " " + fecha;
+          return {
+            fecha: fecha,
+            [efecto]: total[index],
+           "color": `hsl(${index * 162}, 70%, 50%)`,
+          };
+        });
+        setData(values)
+        //console.log(values)
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+
+  const dates = []
+
+  data.forEach(function(element) {
+    const keys = Object.keys(element);
+    dates.push(keys[1]); 
+  });
+
+    return (
         <ResponsiveBar
           data={data}
           theme={{
@@ -87,6 +135,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             },
           }}
 
+
           keys={[llaves[0]]} 
           indexBy="alcaldia"
           margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
@@ -94,6 +143,12 @@ const BarChart = ({ datos, isDhasboard = false }) => {
           valueScale={{ type: "linear", min: 0,
           max: max,
           clamp: true}}
+          keys={dates} 
+          indexBy="fecha"
+          margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+          padding={0.3}
+          valueScale={{ type: "linear" }}
+
           indexScale={{ type: "band", round: true }}
           colors={{ scheme: "nivo" }}
 
@@ -127,9 +182,12 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             from: "color",
             modifiers: [["darker", "1.6"]],
           }}
+
           
           //enableGridX={false}
           enableGridY={false}
+
+
 
           axisTop={null}
           axisRight={null}
@@ -137,11 +195,18 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
+
             legend: isDhasboard ? undefined : "alcaldia", // changed
             legendPosition: "middle",
             legendOffset: 32,
           }}
           
+
+            legend: isDhasboard ? undefined : "fecha", // changed
+            legendPosition: "middle",
+            legendOffset: 32,
+          }}
+
           axisLeft={{
             tickSize: 5,
             tickPadding: 5,
@@ -150,7 +215,6 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             legendPosition: "middle",
             legendOffset: -40,
           }}
-          
           enableLabel={false}
           labelSkipWidth={12}
           labelSkipHeight={12}

@@ -1,4 +1,5 @@
 import { ResponsiveLine } from "@nivo/line";
+
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import React, { useState, useEffect} from 'react';
@@ -62,6 +63,16 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
     }, [effects]);
     console.log(data);
     //console.log(mockLineData);
+
+import { mockLineData as data } from "../data/mockData";
+import { useTheme } from "@mui/material";
+import { tokens } from "../theme";
+
+const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
+
+
     return (
         <ResponsiveLine
         data={data}
@@ -105,9 +116,14 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           type: "linear",
           min: "auto",
           max: "auto",
+
           //zero: false,
           //stacked: true,
           //reverse: false,
+
+          stacked: true,
+          reverse: false,
+
         }}
         yFormat=" >-.2f"
         curve="catmullRom"
@@ -118,7 +134,11 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           tickSize: 0,
           tickPadding: 5,
           tickRotation: 0,
+
           legend: isDashboard ? undefined : "meses", // added
+
+          legend: isDashboard ? undefined : "transportation", // added
+
           legendOffset: 36,
           legendPosition: "middle",
         }}
@@ -128,7 +148,11 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           tickSize: 3,
           tickPadding: 5,
           tickRotation: 0,
+
           legend: isDashboard ? undefined : "valor", // added
+
+          legend: isDashboard ? undefined : "count", // added
+
           legendOffset: -40,
           legendPosition: "middle",
         }}

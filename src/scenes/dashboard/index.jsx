@@ -17,6 +17,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+
   const data = [
     'fiebre',
     'dolor brazo',
@@ -174,7 +175,11 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
+
             <LineChart effects = {data} isDashboard={true} />
+
+            <LineChart isDashboard={true} />
+
           </Box>
         </Box>
         <Box
@@ -260,7 +265,7 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
-          
+
           <Typography
             variant="h5"
             fontWeight="600"
@@ -269,7 +274,11 @@ const Dashboard = () => {
             Grafica de barras
           </Typography>
           <Box height="250px" mt="-20px">
+
             <BarChart datos = {data2} isDashboard={true} />
+
+            <BarChart isDashboard={true} />
+
           </Box>
         </Box>
         <Box

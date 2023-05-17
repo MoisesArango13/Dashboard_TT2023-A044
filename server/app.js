@@ -21,8 +21,6 @@ const config = {
 const pool = new sql.ConnectionPool(config)
 pool.connect()
 
-
-
 app.get('/data', (req, res) => {
   const id = req.query.id;
   const name = req.query.name;
@@ -65,6 +63,8 @@ app.get('/efectos_por_mes', (req, res) => {
     if (err) console.log(err);
 
     const request = new sql.Request(pool);
+    
+    const request = new sql.Request();
 
     if(tipo.length > 0){
 
