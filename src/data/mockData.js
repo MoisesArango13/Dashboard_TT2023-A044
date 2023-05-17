@@ -266,6 +266,11 @@ export const mockDataInvoices = [
   },
 ];
 
+
+export let mockTransactions = [
+  {
+    user: "@lopezdoriga Mi madre se puso la #vacuna de #Pfizer precisamente en #azcapotzalco la semana pasada. Al otro día tuvo fiebre y dolor de brazo. Pero solo fue un día. https://t.co/jUOSS3aaFA",
+
 export const mockTransactions = [
   {
     txId: "01e4dsa",
@@ -314,6 +319,7 @@ export const mockTransactions = [
     user: "jackdower",
     date: "2022-04-01",
     cost: "133.45",
+
   },
 ];
 
