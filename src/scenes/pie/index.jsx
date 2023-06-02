@@ -38,27 +38,23 @@ const Pie = () =>{
               marginRight: '10px',
               marginBottom: '15px' 
               }}>
-                <option value="dolor cabeza">dolor cabeza</option>
+                <option value="dolor de cabeza">dolor de cabeza</option>
                 <option value="cansado">cansado</option>
                 <option value="cansancio">cansancio</option>
                 <option value="ciclo menstrual">ciclo menstrual</option>
                 <option value="colico">colico</option>
                 <option value="cuerpo cortado">cuerpo cortado</option>
-                <option value="dolor articulacion">dolor articulacion</option>
                 <option value="dolor articular">dolor articular</option>
-                <option value="dolor brazo">dolor brazo</option>
-                <option value="dolor cuerpo">dolor cuerpo</option>
-                <option value="dolor garganta">dolor garganta</option>
+                <option value="dolor de brazo">dolor de brazo</option>
+                <option value="dolor de cuerpo">dolor de cuerpo</option>
+                <option value="dolor de garganta">dolor de garganta</option>
                 <option value="dolor muscular">dolor muscular</option>
-                <option value="escalofrios">escalofrios</option>
                 <option value="escalofrio">escalofrio</option>
                 <option value="fatiga">fatiga</option>
                 <option value="fiebre">fiebre</option>
                 <option value="frio">frio</option>
-                <option value="gripa">gripa</option>
                 <option value="gripe">gripe</option>
                 <option value="mareo">mareo</option>
-                <option value="mareos">mareos</option>
                 <option value="nausea">nausea</option>
                 <option value="sudor">sudor</option>
                 <option value="sueño">sueño</option>

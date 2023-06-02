@@ -34,7 +34,7 @@ const GeographyChart = ({effect}) => {
   
   // Define the style for the city borders
   const cityBordersStyle = {
-    color: 'blue',
+    color: 'grey',
     weight: 2,
     fillOpacity: 0.2,
   };
@@ -50,7 +50,7 @@ const GeographyChart = ({effect}) => {
 
       axios.get('http://localhost:5000/efectos_por_coordenadas', {params: params})
         .then(response => {
-          const recordsets = response.data.recordset;
+          const recordsets = response.data;
           let latitudes = recordsets.map(value => value.latitud);
           let longitudes = recordsets.map(value => value.longitud);
 
@@ -112,6 +112,10 @@ const GeographyChart = ({effect}) => {
       let map = L.map("map").setView([medianLat, medianLon], 10);
 
       L.geoJSON(cityBordersData, {
+        style: {
+          fillColor: 'transparent', // Change the fill color of the GeoJSON layer
+        },
+
         onEachFeature: (feature, layer) => {
           // Get the name property from the feature's properties
           const cityName = feature.properties.NOM_MUN;
@@ -123,26 +127,27 @@ const GeographyChart = ({effect}) => {
         },
       }).addTo(map);
 
-      // Add tile layer from OpenStreetMap
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "Map data &copy; OpenStreetMap contributors",
-        maxZoom: 18,
-        scrollWheelZoom: true,
+      //Add tile layer from OpenStreetMap
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 18,
+      scrollWheelZoom: true,
       }).addTo(map);
+
 
         console.log(dataRef.current);
         L.heatLayer(dataRef.current, {
           radius: 50,
           blur: 50,
           maxZoom: 17,
-          gradient: {
-            0.0: 'orange',
-            0.5: 'red'
-          }
+            gradient: {
+              0.0: 'rgba(0, 255, 0, 0.5)', // Increased intensity green (RGBA: green with 50% opacity)
+              0.5: 'rgba(255, 0, 0, 1.0)', // Increased intensity red (RGBA: yellow with 70% opacity)
+              1.0: 'rgba(255, 255, 0, 0.7)' // / Intense yellow color for high intensity 
+            },
         }).addTo(map);
       }, 2000); 
 
-  return <div id="map" style={{ height: "100vh" }}></div>;
+  return <div id="map" style={{height: "100vh" }}></div>;
 };
 
 export default GeographyChart;

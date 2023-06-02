@@ -19,8 +19,8 @@ const Dashboard = () => {
 
   const data = [
     'fiebre',
-    'dolor brazo',
-    'dolor cabeza',
+    'dolor de brazo',
+    'dolor de cabeza',
     2021,
   ];
 

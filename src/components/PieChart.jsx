@@ -8,16 +8,18 @@ import React, { useState, useEffect} from 'react';
 
 const PieChart = ({effect}) => {
   const [data, setData] = useState([]);
+  
+  let tipo_efecto = effect[0];
 
   useEffect(() => {
 
     const params = {
-      tipo: effect[0],
+      tipo: tipo_efecto,
     };
 
     axios.get('http://localhost:5000/efectos_por_alcaldia', {params: params})
       .then(response => {
-        const recordsets = response.data.recordset;
+        const recordsets = response.data;
         let alcaldia = recordsets.map(value => value.alcaldia);
         let total = recordsets.map(value => value.total);
 
@@ -41,7 +43,11 @@ const PieChart = ({effect}) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
-        <ResponsivePie
+      <>
+      <h2 style={{ textAlign: "center" }}>
+        Efecto {tipo_efecto}
+        </h2>
+      <ResponsivePie
       data={data}
 
       theme={{
@@ -143,6 +149,7 @@ const PieChart = ({effect}) => {
         },
       ]}*/
     />
+    </>
     );
 };
 

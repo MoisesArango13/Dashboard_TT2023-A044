@@ -6,21 +6,26 @@ import axios from 'axios';
 import React, { useState, useEffect} from 'react';
 
 const BarChart = ({ datos, isDhasboard = false }) => {
-  console.log(datos);
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  //console.log(datos);
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
+
+  let tipo_efecto = datos[0];
+  let marca_vacuna = datos[1];
     
   useEffect(() => {
     const params = {
-      tipo: datos[0],
-      marca: datos[1]
+      tipo: tipo_efecto,
+      marca: marca_vacuna
     };
     
     axios.get('http://localhost:5000/efectos_por_marca', {params: params})
       .then(response => {
-        const recordsets = response.data.recordset;
+        
+        const recordsets = response.data;
+        //console.log(recordset)
         let alcaldia = recordsets.map(value => value.alcaldia);
         let total = recordsets.map(value => value.total);
 
@@ -54,7 +59,10 @@ const BarChart = ({ datos, isDhasboard = false }) => {
   let max = Math.max(...totales);
   
     return (
-        
+      <>
+      <h2 style={{ textAlign: "center" }}>
+        Efecto {tipo_efecto} con la vacuna {marca_vacuna}
+        </h2>
         <ResponsiveBar
           data={data}
           theme={{
@@ -146,7 +154,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: isDhasboard ? undefined : "valor", // changed
+            legend: isDhasboard ? undefined : "Cantidad de efectos encontrados", // changed
             legendPosition: "middle",
             legendOffset: -40,
           }}
@@ -188,6 +196,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             return e.id + ": " + e.formattedValue + " in fecha: " + e.indexValue;
           }}
         />
+        </>
       );
 
 }

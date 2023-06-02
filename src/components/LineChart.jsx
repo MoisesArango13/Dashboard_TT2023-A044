@@ -9,10 +9,12 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
 
     let [data, setData] = useState([]);
 
+    const length = effects.length;
+    let año = effects[length - 1];
+
     useEffect(() => {
       
       //console.log(effects);
-      const length = effects.length;
       
       let values = [];
 
@@ -22,13 +24,13 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
       for(let i = 0; i < length - 1; i++){
         const params = {
           tipo: effects[i],
-          anio: effects[length - 1],
+          anio: año,
         };
 
         fetch(`http://localhost:5000/efectos_por_anio?${new URLSearchParams(params)}`)
   .then(response => response.json())
   .then(datas => {
-          const recordsets = datas.recordset;
+          const recordsets = datas;
           let meses = recordsets.map(value => value.mes);
           let total = recordsets.map(value => value.total);
 
@@ -63,6 +65,10 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
     console.log(data);
     //console.log(mockLineData);
     return (
+      <>
+      <h2 style={{ textAlign: "center" }}>
+        Efectos año {año}
+        </h2>
         <ResponsiveLine
         data={data}
         theme={{
@@ -118,7 +124,7 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           tickSize: 0,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDashboard ? undefined : "meses", // added
+          legend: isDashboard ? undefined : "Meses", // added
           legendOffset: 36,
           legendPosition: "middle",
         }}
@@ -128,7 +134,7 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           tickSize: 3,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDashboard ? undefined : "valor", // added
+          legend: isDashboard ? undefined : "Cantidad de efectos encontrados", // added
           legendOffset: -40,
           legendPosition: "middle",
         }}
@@ -140,6 +146,7 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
         pointBorderColor={{ from: "serieColor" }}
         pointLabelYOffset={-12}
         useMesh={true}
+        
         legends={[
           {
             anchor: "bottom-right",
@@ -167,6 +174,7 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           },
         ]}
       />
+      </>
     );
 };
 
