@@ -48,7 +48,7 @@ const GeographyChart = ({effect}) => {
         tipo: effect[0],
       };
 
-      axios.get('http://localhost:5000/efectos_por_coordenadas', {params: params})
+      axios.get('https://t-tserver.vercel.app/efectos_por_coordenadas', {params: params})
         .then(response => {
           const recordsets = response.data;
           let latitudes = recordsets.map(value => value.latitud);

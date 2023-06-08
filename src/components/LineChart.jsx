@@ -27,7 +27,7 @@ const LineChart = ({ effects, isCustomLineColors = false, isDashboard = false })
           anio: año,
         };
 
-        fetch(`http://localhost:5000/efectos_por_anio?${new URLSearchParams(params)}`)
+        fetch(`https://t-tserver.vercel.app/efectos_por_anio?${new URLSearchParams(params)}`)
   .then(response => response.json())
   .then(datas => {
           const recordsets = datas;
