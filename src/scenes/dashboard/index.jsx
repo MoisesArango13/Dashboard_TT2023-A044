@@ -29,9 +29,11 @@ const Dashboard = () => {
   ];
 
   return (
+
     <Box m="20px">
       
       {/* HEADER */}
+
       <Box 
           display="flex" 
           justifyContent="space-between" 
@@ -41,6 +43,7 @@ const Dashboard = () => {
       </Box>
 
       {/* GRID & CHARTS */}
+
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
@@ -76,7 +79,7 @@ const Dashboard = () => {
           />
         </Box>
 
-        <Box
+        {/*<Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -88,7 +91,7 @@ const Dashboard = () => {
             subtitle="Nuevos sintomas"
             progress="0.50"
           />
-        </Box>
+        </Box>*/}
 
         {/*<Box
           gridColumn="span 3"
@@ -240,6 +243,7 @@ const Dashboard = () => {
             <BarChart datos = {data2} isDashboard={true} />
           </Box>
         </Box>
+        
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -262,6 +266,7 @@ const Dashboard = () => {
       </Box>
 
     </Box>
+
   );
 };
 
