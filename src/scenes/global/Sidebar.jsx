@@ -63,7 +63,7 @@ const Sidebar = () => {
                       onClick={() => setIsCollapsed(!isCollappsed)}
                       icon={isCollappsed ? <MenuOutlinedIcon/> : undefined}
                       style={{
-                        margin: "10px 0 20px 0",
+                        margin: "20px 0 20px 0",
                         color: colors.grey[100],
                       }}
                       >
@@ -75,7 +75,7 @@ const Sidebar = () => {
                               ml="15px"
                             >
                                 <Typography variant="h3" color={colors.grey[100]}>
-                                    2023-A044
+                                   TT 2023-A044
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollappsed)}>
                                     <MenuOutlinedIcon/>
@@ -85,38 +85,40 @@ const Sidebar = () => {
                     </MenuItem>
                     {/*Usuario*/}
                     {!isCollappsed && (
-                    <Box mb="25px">
+                    <Box mb="30px">
                         <Box display="flex" justifyContent="center" alignItems="center">
                         <img 
                         alt ="profile-user"
-                        width="100px"
-                        height = "100px"
-                        src={"../../assets/usuario.png"}
-                        style={{ cursor: "pointer", borderRadius:"50%"}}
+                        width="130px"
+                        height = "130px"
+                        src={"../../assets/vacunacion.png"}
+                        style={{ cursor: "pointer", borderRadius:"70%"}}
                         />
                     </Box>
                     <Box textAlign="center">
                         <Typography 
-                         variant="h2"
+                         variant="h3"
                          color={colors.grey[100]} 
                          fontWeight="bold" 
                          sx={{ m: "10px 0 0 0"}}
                          >
-                            Prototipo para la identificación de efectos en la vacuna COVID-19 en la CDMX
+                            Bienvenido
                         </Typography>
-                        <Typography
+
+                {/*        <Typography
                         variant="h5"
                         color={colors.greenAccent[500]}
                         >
                         </Typography>
+                    */ }
                     </Box>
                 </Box>
                  )}
 
                  {/*Items para nuestro MENU */}
-                 <Box paddingLeft={isCollappsed ? undefined : "10%"}>
+                 <Box paddingLeft={isCollappsed ? undefined : "6%"}>
                  <Item 
-                    title="Dashboard"
+                    title="Inicio"
                     to="/"
                     icon={<HomeOutlinedIcon />}
                     selected={selected}
