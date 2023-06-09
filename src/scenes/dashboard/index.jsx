@@ -1,11 +1,5 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/header";
 import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
@@ -15,54 +9,45 @@ import ProgressCircle from "../../components/ProgressCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const colors = tokens(theme.palette.mode);
 
-  const data = [
+  const data = [ //parámetros por default 
     'fiebre',
     'dolor de brazo',
     'dolor de cabeza',
     2021,
   ];
 
-  const data2 = [
+  const data2 = [//parámetros por default 
     'fiebre',
     'astrazeneca'
   ];
 
-  const data3 = [
+  const data3 = [//parámetros por default 
     'fiebre',
   ];
 
   return (
     <Box m="20px">
+      
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Bienvenido" />
-
-        <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Descargar Reporte
-          </Button>
-        </Box>
+      <Box 
+          display="flex" 
+          justifyContent="space-between" 
+          alignItems="center"
+      >
+        <Header title="DASHBOARD EFECTOS DE LA VACUNA VS COVID-19 EN CDMX"  />
       </Box>
 
       {/* GRID & CHARTS */}
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
+        gridAutoRows={isSmallScreen ? "auto" : "140px"}
         gap="20px"
       >
-        {/* ROW 1 */}
+        {/* FILA 1 */}
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -71,17 +56,12 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="78,361"
-            subtitle="Tweets Encotrados"
-            progress="0.90"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            title="128,101"
+            subtitle="Tweets Recolectados"
+            progress="1"
           />
         </Box>
+
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -93,14 +73,9 @@ const Dashboard = () => {
             title="431,225"
             subtitle="Tweets de Vacunas"
             progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
           />
         </Box>
+
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -111,23 +86,18 @@ const Dashboard = () => {
           <StatBox
             title="32,441"
             subtitle="Nuevos sintomas"
-            progress="0.20"
-            increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            progress="0.50"
           />
         </Box>
-        <Box
+
+        {/*<Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
-          <StatBox
+          {/* <StatBox
             title="1,325,134"
             subtitle="Ejemplo"
             progress="0.80"
@@ -139,10 +109,11 @@ const Dashboard = () => {
             }
           />
         </Box>
-
+        */}
+      
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
+          gridColumn="span 9"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -154,34 +125,24 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Box>
+
               <Typography
-                variant="h5"
+                variant="h6"
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Casos Covid con grafica lineal
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                CDMX
+                Casos Covid con grafica lineal en CDMX
               </Typography>
             </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
+            
           </Box>
+
           <Box height="250px" m="-20px 0 0 0">
             <LineChart effects = {data} isDashboard={true} />
           </Box>
         </Box>
-        <Box
+
+       {/* <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -231,8 +192,9 @@ const Dashboard = () => {
             </Box>
           ))}
         </Box>
+        */}
 
-        {/* ROW 3 */}
+        {/* ROW 3 
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -259,6 +221,8 @@ const Dashboard = () => {
             <Typography>Texto</Typography>
           </Box>
         </Box>
+        */}
+
         <Box
           gridColumn="span 4"
           gridRow="span 2"
@@ -283,17 +247,20 @@ const Dashboard = () => {
           padding="30px"
         >
           <Typography
-            variant="h5"
+            variant="h6"
             fontWeight="600"
-            sx={{ marginBottom: "15px" }}
+            sx={{ marginBottom: "9px" }}
           >
-            Mapa CMDX
+            Mapa Calor CDMX
           </Typography>
-          <Box height="200px">
+
+          <Box height="200VS">
             <GeographyChart effect = {data3} isDashboard={true} />
           </Box>
+
         </Box>
       </Box>
+
     </Box>
   );
 };
