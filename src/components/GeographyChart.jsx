@@ -148,7 +148,7 @@ const GeographyChart = ({effect}) => {
         }).addTo(map);
       }, 2000); 
 
-  return <div id="map" style={{height: "100vh" }}></div>;
+  return <div id="map" style={{height: "180vh" }}></div>;
 };
 
 export default GeographyChart;
