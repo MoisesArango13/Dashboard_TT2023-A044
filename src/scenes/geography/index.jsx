@@ -224,7 +224,7 @@ const Geography = () => {
         <p></p>
         
         <Box
-            height="82.5vh"
+            height="102.5vh"
             border={`1px solid ${colors.grey[100]}`}
             borderRadius="5px"
             style={{ overflow: "hidden" }}

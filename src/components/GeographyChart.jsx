@@ -130,7 +130,7 @@ const GeographyChart = ({effect}) => {
 
       //Add tile layer from OpenStreetMap
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 18,
+      maxZoom: 21,
       scrollWheelZoom: true,
       }).addTo(map);
 
