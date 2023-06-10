@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   return (
 
-    <Box m="10px">
+    <Box m="20px">
       
       {/* HEADER */}
 
