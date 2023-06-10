@@ -11,7 +11,6 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import logoImage from '../../../public/vacunacion.png';
 
 const Item = ({ title, to, icon, selected, setSelected}) => {
     const theme = useTheme();
@@ -93,7 +92,7 @@ const Sidebar = () => {
                         alt ="logo-app"
                         width="130px"
                         height = "130px"
-                        src={logoImage}
+                        src={"../../vacunacion.png"}
                         style={{ cursor: "pointer", borderRadius:"70%"}}
                         />
                     </Box>
@@ -136,28 +135,28 @@ const Sidebar = () => {
                 </Typography>
 
                 <Item 
-                    title="Gráfica de Barras"
+                    title="Efectos por vacuna"
                     to="/bar"
                     icon={<BarChartOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Gráfica de Pastel"
+                    title="Efectos por alcaldia"
                     to="/pie"
                     icon={<PieChartOutlineOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Gráfica Lineal"
+                    title="Efectos por año"
                     to="/line"
                     icon={<TimelineOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Mapa de Calor"
+                    title="Efectos por coordenadas"
                     to="/geography"
                     icon={<MapOutlinedIcon />}
                     selected={selected}

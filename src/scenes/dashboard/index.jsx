@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   return (
 
-    <Box m="10px">
+    <Box m="20px">
       
       {/* HEADER */}
 
@@ -72,7 +72,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="539"
+            title="606"
             subtitle="Posibles efectos secundarios"
             progress="0.4"
           />
@@ -148,7 +148,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Casos Covid con grafica lineal en CDMX
+                Potenciales efectos grafica lineal
               </Typography>
             </Box>
             

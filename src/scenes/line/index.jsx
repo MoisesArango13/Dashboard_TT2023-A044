@@ -22,7 +22,7 @@ const Line = () =>{
 
     return (
         <Box m="18px">
-         <Header title="Efectos por año" subtitle="Gráfica poligonal" />
+         <Header title="Efectos por año" subtitle="Gráfica lineal" />
           <p>En el mes de julio de 2021, fue la fecha que se informaron más posibles efectos secundarios. Los síntomas comunes mencionados fueron dolor de cabeza, cansancio, fiebre, dolor de cuerpo y escalofríos. Esos efectos se presentaron horas después de la aplicación, tanto durante el día como por la noche, e incluso días después de recibir la dosis.</p>
           <p></p>
           <p>En el año 2022, los comentarios sobre posibles efectos secundarios estuvieron relacionados con las dosis de refuerzo. El mes más destacado con respecto a estos comentarios fue febrero</p>
