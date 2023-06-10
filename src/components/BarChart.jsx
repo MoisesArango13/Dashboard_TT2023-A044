@@ -1,7 +1,6 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
-//import { mockTransactions } from "../data/mockData";
 import axios from 'axios';
 import React, { useState, useEffect} from 'react';
 
@@ -97,8 +96,8 @@ const BarChart = ({ datos, isDhasboard = false }) => {
 
           keys={[llaves[0]]} 
           indexBy="alcaldia"
-          margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-          padding={0.3}
+          margin={{ top: 40, right: 80, bottom: 40, left: 90 }}
+          padding={0.45}
           valueScale={{ type: "linear", min: 0,
           max: max,
           clamp: true}}
@@ -106,7 +105,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
           colors={{ scheme: "nivo" }}
 
           tooltip={({ id, value }) => (
-            <strong style={{ color: "black" }}>
+            <strong style={{ color: theme.palette.mode === "dark" ? "white" : "black" }}>
               {id}: {value}
             </strong>
           )}
@@ -118,7 +117,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
               background: "inherit",
               color: "#38bcb2",
               size: 4,
-              padding: 1,
+              padding: 10,
               stagger: true,
             },
             {
@@ -142,21 +141,21 @@ const BarChart = ({ datos, isDhasboard = false }) => {
           axisTop={null}
           axisRight={null}
           axisBottom={{
-            tickSize: 5,
-            tickPadding: 5,
+            tickSize: 6,
+            tickPadding: 4,
             tickRotation: 0,
-            legend: isDhasboard ? undefined : "alcaldia", // changed
+            legend: isDhasboard ? undefined : "Alcaldías donde fueron encontrados", // changed
             legendPosition: "middle",
-            legendOffset: 32,
+            legendOffset: 30,
           }}
           
           axisLeft={{
-            tickSize: 5,
-            tickPadding: 5,
+            tickSize: 6,
+            tickPadding: 3,
             tickRotation: 0,
             legend: isDhasboard ? undefined : "Cantidad de efectos encontrados", // changed
             legendPosition: "middle",
-            legendOffset: -40,
+            legendOffset: -38,
           }}
           
           enableLabel={false}
@@ -166,6 +165,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
             from: "color",
             modifiers: [["darker", 1.6]],
           }}
+
           /*
           legends={[
             {
@@ -191,13 +191,14 @@ const BarChart = ({ datos, isDhasboard = false }) => {
               ],
             },
           ]}*/
+          
           role="application"
           barAriaLabel={function (e) {
             return e.id + ": " + e.formattedValue + " in fecha: " + e.indexValue;
           }}
         />
-        </>
-      );
+      </>
+    );
 
 }
 

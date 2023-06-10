@@ -11,6 +11,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import logoImage from '../../../public/vacunacion.png';
 
 const Item = ({ title, to, icon, selected, setSelected}) => {
     const theme = useTheme();
@@ -83,15 +84,16 @@ const Sidebar = () => {
                             </Box>
                         )}
                     </MenuItem>
-                    {/*Usuario*/}
+
+                    {/*Logo*/}
                     {!isCollappsed && (
                     <Box mb="30px">
                         <Box display="flex" justifyContent="center" alignItems="center">
                         <img 
-                        alt ="profile-user"
+                        alt ="logo-app"
                         width="130px"
                         height = "130px"
-                        src={"../../assets/vacunacion.png"}
+                        src={logoImage}
                         style={{ cursor: "pointer", borderRadius:"70%"}}
                         />
                     </Box>
@@ -105,12 +107,12 @@ const Sidebar = () => {
                             Bienvenido
                         </Typography>
 
-                {/*        <Typography
+                        {/*        <Typography
                         variant="h5"
                         color={colors.greenAccent[500]}
                         >
                         </Typography>
-                    */ }
+                     */ }
                     </Box>
                 </Box>
                  )}
@@ -130,32 +132,32 @@ const Sidebar = () => {
                   color={colors.grey[300]}
                   sx = {{ m: "15px 0 5 px 20px"}}
                   >
-                    Estadisticas relevantes
+                    Gráficas Disponibles
                 </Typography>
 
                 <Item 
-                    title="Tabla de Barras"
+                    title="Gráfica de Barras"
                     to="/bar"
                     icon={<BarChartOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Tabla de Pastel"
+                    title="Gráfica de Pastel"
                     to="/pie"
                     icon={<PieChartOutlineOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Tabla Lineal"
+                    title="Gráfica Lineal"
                     to="/line"
                     icon={<TimelineOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Tabla geografica"
+                    title="Mapa de Calor"
                     to="/geography"
                     icon={<MapOutlinedIcon />}
                     selected={selected}
@@ -171,7 +173,7 @@ const Sidebar = () => {
                 </Typography>
                 
                 <Item
-                    title="FAQ Page"
+                    title="Preguntas Frecuentes"
                     to="/faq"
                     icon={<HelpOutlineOutlinedIcon />}
                     selected={selected}

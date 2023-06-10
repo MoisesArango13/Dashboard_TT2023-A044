@@ -11,8 +11,8 @@ const Topbar = () => {
     return(
          <Box display="flex" justifyContent="space-between" p={2}>
             
-            {/*Sección de Iconos*/}
-            <Box display="flex" marginLeft="auto">
+            {/*Iconos*/}
+            <Box display="flex" flexGrow={1} justifyContent="flex-end">
                 <IconButton onClick={colorMode.toggleColorMode}>
                     {theme.palette.mode === 'dark' ? ( 
                         <DarkModeOutlineIcon/>

@@ -163,7 +163,7 @@ const Bar = () =>{
     }, [marca]);
 
     return (
-        <Box m="20px">
+        <Box m="10px">
          <Header title="Efectos por vacuna" subtitle="Gráfica de barras" />
          <p>Las vacunas que más menciono la gente fueron AstraZeneca y Sputnik -v. En AstraZeneca predominaron los efectos dolor de cabeza, fiebre, dolor de brazo, escalofrío y dolor de cuerpo. Mientras que Sputnik-V los efectos fueron dolor de cabeza, fiebre, dolor de brazo y sueño.</p>
           <p></p>
@@ -175,67 +175,70 @@ const Bar = () =>{
             style={{
             color: "#000",
             backgroundColor: colors.greenAccent[400],
-            borderRadius: "5px",
-            padding: "10px",
-            borderColor: "grey",
-            borderWidth: "2px",
+            borderRadius: "10px",
+            padding: "7px",
+            borderColor: "black",
+            borderWidth: "3px",
             borderStyle: "solid",
             display: 'inline-block', 
             marginRight: '10px',
             marginBottom: '15px' 
             }}>
-              <option value="fiebre">fiebre</option>
-              <option value="dolor de cabeza">dolor de cabeza</option>
-                <option value="cansado">cansado</option>
-                <option value="cansancio">cansancio</option>
-                <option value="ciclo menstrual">ciclo menstrual</option>
-                <option value="colico">colico</option>
-                <option value="cuerpo cortado">cuerpo cortado</option>
-                <option value="dolor articular">dolor articular</option>
-                <option value="dolor de brazo">dolor de brazo</option>
-                <option value="dolor de cuerpo">dolor de cuerpo</option>
-                <option value="dolor de garganta">dolor de garganta</option>
-                <option value="dolor muscular">dolor muscular</option>
-                <option value="escalofrio">escalofrio</option>
-                <option value="fatiga">fatiga</option>
-                <option value="frio">frio</option>
-                <option value="gripe">gripe</option>
-                <option value="mareo">mareo</option>
-                <option value="nausea">nausea</option>
-                <option value="sudor">sudor</option>
-                <option value="sueño">sueño</option>
-                <option value="temperatura">temperatura</option>
+                <option value="fiebre">Fiebre</option>
+                <option value="dolor cabeza">Dolor cabeza</option>
+                <option value="cansado">Cansado</option>
+                <option value="cansancio">Cansancio</option>
+                <option value="ciclo menstrual">Ciclo menstrual</option>
+                <option value="colico">Colico</option>
+                <option value="cuerpo cortado">Cuerpo cortado</option>
+                <option value="dolor articulacion">Color articulacion</option>
+                <option value="dolor articular">Dolor articular</option>
+                <option value="dolor brazo">Dolor brazo</option>
+                <option value="dolor cuerpo">Dolor cuerpo</option>
+                <option value="dolor garganta">Dolor garganta</option>
+                <option value="dolor muscular">Dolor muscular</option>
+                <option value="escalofrios">Escalofrios</option>
+                <option value="escalofrio">Escalofrio</option>
+                <option value="fatiga">Fatiga</option>
+                <option value="frio">Frio</option>
+                <option value="gripa">Gripa</option>
+                <option value="gripe">Gripe</option>
+                <option value="mareo">Mareo</option>
+                <option value="mareos">Mareos</option>
+                <option value="nausea">Nausea</option>
+                <option value="sudor">Sudor</option>
+                <option value="sueño">Sueño</option>
+                <option value="temperatura">Temperatura</option>
           </select>
 
           <select value={marca} onChange={createHandleOptionChange(seleccionMarca)}
             style={{
             color: "#000",
             backgroundColor: colors.greenAccent[400],
-            borderRadius: "5px",
-            padding: "10px",
+            borderRadius: "10px",
+            padding: "7px",
             borderColor: "grey",
-            borderWidth: "2px",
+            borderWidth: "3px",
             borderStyle: "solid",
             display: 'inline-block'
             }}>
-              <option value="astrazeneca">astrazeneca</option>
-              <option value="sputnik">sputnik</option>
-              <option value="cansino">cansino</option>
-              <option value="pfizer">pfizer</option>
-              <option value="moderna">moderna</option>
+              <option value="astrazeneca">AstraZeneca</option>
+              <option value="sputnik">Sputnik</option>
+              <option value="cansino">Cansino</option>
+              <option value="pfizer">Pfizer</option>
+              <option value="moderna">Moderna</option>
           </select>
           
         </div>
          <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-      >  
-
+            display="grid"
+            gridTemplateColumns="repeat(10, 1fr)"
+            gridAutoRows="110px"
+            gap="13px"
+          >  
         <Box
-          gridColumn="span 6"
-          gridRow="span 2"
+          gridColumn="span 5"
+          gridRow="span 3"
           backgroundColor={colors.primary[400]}
           overflow="auto"
         >
@@ -243,19 +246,19 @@ const Bar = () =>{
             display="flex"
             justifyContent="space-between"
             alignItems="center"
-            borderBottom={`4px solid ${colors.primary[500]}`}
+            borderBottom={`10px solid ${colors.primary[400]}`}
             colors={colors.grey[100]}
-            p="15px"
+            p="7px"
           >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+            <Typography color={colors.grey[100]} variant="h4" fontWeight="800">
               Tweets por vacuna
             </Typography>
           </Box>
           
           {tweetsEstado.map((element, i) => (
             <Box
-              borderBottom={`4px solid ${colors.primary[500]}`}
-              p="15px"
+              borderBottom={`2px solid ${colors.primary[100]}`}
+              p="13px"
             >
               <Box>
                 <Typography color={colors.grey[100]}>
@@ -268,16 +271,16 @@ const Bar = () =>{
 
          <Box
           gridColumn="span 5"
-          gridRow="span 2"
+          gridRow="span 3"
           alignItems="center"
           display="flex"
           justifyContent="center"
         >
-          <img src={getImageSource()} alt="s" height={300}/>
+          <img src={getImageSource()} alt="s" height={320}/>
           </Box>
         </Box>
 
-          <Box height="75vh">
+          <Box height="60vh">
              <BarChart datos={data}/>
           </Box>
         </Box>

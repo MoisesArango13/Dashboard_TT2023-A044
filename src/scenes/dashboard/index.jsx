@@ -74,7 +74,7 @@ const Dashboard = () => {
           <StatBox
             title="539"
             subtitle="Posibles efectos secundarios"
-            progress="0.47"
+            progress="0.4"
           />
         </Box>
       

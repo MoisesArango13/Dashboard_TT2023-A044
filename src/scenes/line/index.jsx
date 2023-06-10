@@ -21,7 +21,7 @@ const Line = () =>{
     let data = [efecto1, efecto2, efecto3, anio];
 
     return (
-        <Box m="20px">
+        <Box m="18px">
          <Header title="Efectos por año" subtitle="Gráfica poligonal" />
           <p>En el mes de julio de 2021, fue la fecha que se informaron más posibles efectos secundarios. Los síntomas comunes mencionados fueron dolor de cabeza, cansancio, fiebre, dolor de cuerpo y escalofríos. Esos efectos se presentaron horas después de la aplicación, tanto durante el día como por la noche, e incluso días después de recibir la dosis.</p>
           <p></p>
@@ -42,27 +42,27 @@ const Line = () =>{
               marginRight: '10px',
               marginBottom: '15px' 
               }}>
-                <option value="dolor de cabeza">dolor de cabeza</option>
-                <option value="cansado">cansado</option>
-                <option value="cansancio">cansancio</option>
-                <option value="ciclo menstrual">ciclo menstrual</option>
-                <option value="colico">colico</option>
-                <option value="cuerpo cortado">cuerpo cortado</option>
-                <option value="dolor articular">dolor articular</option>
-                <option value="dolor de brazo">dolor brazo</option>
-                <option value="dolor de cuerpo">dolor cuerpo</option>
-                <option value="dolor de garganta">dolor garganta</option>
-                <option value="dolor muscular">dolor muscular</option>
-                <option value="escalofrio">escalofrio</option>
-                <option value="fatiga">fatiga</option>
-                <option value="fiebre">fiebre</option>
-                <option value="frio">frio</option>
-                <option value="gripe">gripe</option>
-                <option value="mareo">mareo</option>
-                <option value="nausea">nausea</option>
-                <option value="sudor">sudor</option>
-                <option value="sueño">sueño</option>
-                <option value="temperatura">temperatura</option>
+                <option value="dolor de cabeza">Dolor de Cabeza</option>
+                <option value="cansado">Cansado</option>
+                <option value="cansancio">Cansancio</option>
+                <option value="ciclo menstrual">Ciclo Menstrual</option>
+                <option value="colico">Colico</option>
+                <option value="cuerpo cortado">Cuerpo Cortado</option>
+                <option value="dolor articular">Dolor Articular</option>
+                <option value="dolor de brazo">Dolor Brazo</option>
+                <option value="dolor de cuerpo">Dolor Cuerpo</option>
+                <option value="dolor de garganta">Dolor Garganta</option>
+                <option value="dolor muscular">Dolor Muscular</option>
+                <option value="escalofrio">Escalofrio</option>
+                <option value="fatiga">Fatiga</option>
+                <option value="fiebre">Fiebre</option>
+                <option value="frio">Frio</option>
+                <option value="gripe">Gripe</option>
+                <option value="mareo">Mareo</option>
+                <option value="nausea">Nausea</option>
+                <option value="sudor">Sudor</option>
+                <option value="sueño">Sueño</option>
+                <option value="temperatura">Temperatura</option>
             </select>
 
             <select value={efecto2} onChange={createHandleOptionChange(seleccionEfecto2)} 
@@ -77,27 +77,27 @@ const Line = () =>{
               marginRight: '10px',
               display: 'inline-block'
               }}>
-                <option value="dolor de cabeza">dolor de cabeza</option>
-                <option value="cansado">cansado</option>
-                <option value="cansancio">cansancio</option>
-                <option value="ciclo menstrual">ciclo menstrual</option>
-                <option value="colico">colico</option>
-                <option value="cuerpo cortado">cuerpo cortado</option>
-                <option value="dolor articular">dolor articular</option>
-                <option value="dolor de brazo">dolor brazo</option>
-                <option value="dolor de cuerpo">dolor cuerpo</option>
-                <option value="dolor de garganta">dolor garganta</option>
-                <option value="dolor muscular">dolor muscular</option>
-                <option value="escalofrio">escalofrio</option>
-                <option value="fatiga">fatiga</option>
-                <option value="fiebre">fiebre</option>
-                <option value="frio">frio</option>
-                <option value="gripe">gripe</option>
-                <option value="mareo">mareo</option>
-                <option value="nausea">nausea</option>
-                <option value="sudor">sudor</option>
-                <option value="sueño">sueño</option>
-                <option value="temperatura">temperatura</option>
+                <option value="dolor de cabeza">Dolor de Cabeza</option>
+                <option value="cansado">Cansado</option>
+                <option value="cansancio">Cansancio</option>
+                <option value="ciclo menstrual">Ciclo Menstrual</option>
+                <option value="colico">Colico</option>
+                <option value="cuerpo cortado">Cuerpo Cortado</option>
+                <option value="dolor articular">Dolor Articular</option>
+                <option value="dolor de brazo">Dolor Brazo</option>
+                <option value="dolor de cuerpo">Dolor Cuerpo</option>
+                <option value="dolor de garganta">Dolor Garganta</option>
+                <option value="dolor muscular">Dolor Muscular</option>
+                <option value="escalofrio">Escalofrio</option>
+                <option value="fatiga">Fatiga</option>
+                <option value="fiebre">Fiebre</option>
+                <option value="frio">Frio</option>
+                <option value="gripe">Gripe</option>
+                <option value="mareo">Mareo</option>
+                <option value="nausea">Nausea</option>
+                <option value="sudor">Sudor</option>
+                <option value="sueño">Sueño</option>
+                <option value="temperatura">Temperatura</option>
             </select>
 
             <select value={efecto3} onChange={createHandleOptionChange(seleccionEfecto3)} 
@@ -112,27 +112,27 @@ const Line = () =>{
               marginRight: '10px',
               display: 'inline-block'
               }}>
-                <option value="dolor de cabeza">dolor de cabeza</option>
-                <option value="cansado">cansado</option>
-                <option value="cansancio">cansancio</option>
-                <option value="ciclo menstrual">ciclo menstrual</option>
-                <option value="colico">colico</option>
-                <option value="cuerpo cortado">cuerpo cortado</option>
-                <option value="dolor articular">dolor articular</option>
-                <option value="dolor de brazo">dolor brazo</option>
-                <option value="dolor de cuerpo">dolor cuerpo</option>
-                <option value="dolor de garganta">dolor garganta</option>
-                <option value="dolor muscular">dolor muscular</option>
-                <option value="escalofrio">escalofrio</option>
-                <option value="fatiga">fatiga</option>
-                <option value="fiebre">fiebre</option>
-                <option value="frio">frio</option>
-                <option value="gripe">gripe</option>
-                <option value="mareo">mareo</option>
-                <option value="nausea">nausea</option>
-                <option value="sudor">sudor</option>
-                <option value="sueño">sueño</option>
-                <option value="temperatura">temperatura</option>
+                <option value="dolor de cabeza">Dolor de Cabeza</option>
+                <option value="cansado">Cansado</option>
+                <option value="cansancio">Cansancio</option>
+                <option value="ciclo menstrual">Ciclo Menstrual</option>
+                <option value="colico">Colico</option>
+                <option value="cuerpo cortado">Cuerpo Cortado</option>
+                <option value="dolor articular">Dolor Articular</option>
+                <option value="dolor de brazo">Dolor Brazo</option>
+                <option value="dolor de cuerpo">Dolor Cuerpo</option>
+                <option value="dolor de garganta">Dolor Garganta</option>
+                <option value="dolor muscular">Dolor Muscular</option>
+                <option value="escalofrio">Escalofrio</option>
+                <option value="fatiga">Fatiga</option>
+                <option value="fiebre">Fiebre</option>
+                <option value="frio">Frio</option>
+                <option value="gripe">Gripe</option>
+                <option value="mareo">Mareo</option>
+                <option value="nausea">Nausea</option>
+                <option value="sudor">Sudor</option>
+                <option value="sueño">Sueño</option>
+                <option value="temperatura">Temperatura</option>
             </select>
 
             <select value={anio} onChange={createHandleOptionChange(seleccionAnio)} 

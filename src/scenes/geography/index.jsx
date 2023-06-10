@@ -125,37 +125,37 @@ const Geography = () => {
               style={{
               color: "#000",
               backgroundColor: colors.greenAccent[400],
-              borderRadius: "5px",
-              padding: "10px",
-              borderColor: "grey",
-              borderWidth: "2px",
+              borderRadius: "10px",
+              padding: "7px",
+              borderColor: "black",
+              borderWidth: "3px",
               borderStyle: "solid",
               display: 'inline-block', 
               marginRight: '10px',
               marginBottom: '15px' 
               }}>
-                <option value="todos">todos los efectos</option>
-                <option value="dolor de cabeza">dolor de cabeza</option>
-                <option value="cansado">cansado</option>
-                <option value="cansancio">cansancio</option>
-                <option value="ciclo menstrual">ciclo menstrual</option>
-                <option value="colico">colico</option>
-                <option value="cuerpo cortado">cuerpo cortado</option>
-                <option value="dolor articular">dolor articular</option>
-                <option value="dolor de brazo">dolor brazo</option>
-                <option value="dolor de cuerpo">dolor cuerpo</option>
-                <option value="dolor de garganta">dolor garganta</option>
-                <option value="dolor muscular">dolor muscular</option>
-                <option value="escalofrio">escalofrio</option>
-                <option value="fatiga">fatiga</option>
-                <option value="fiebre">fiebre</option>
-                <option value=" frio">frio</option>
-                <option value="gripe">gripe</option>
-                <option value="mareo">mareo</option>
-                <option value="nausea">nausea</option>
-                <option value="sudor">sudor</option>
-                <option value="sueño">sueño</option>
-                <option value="temperatura">temperatura</option>
+                  <option value="todos">Todos los efectos</option>
+                  <option value="dolor de cabeza">Dolor de cabeza</option>
+                  <option value="cansado">Cansado</option>
+                  <option value="cansancio">Cansancio</option>
+                  <option value="ciclo menstrual">Ciclo menstrual</option>
+                  <option value="colico">Colico</option>
+                  <option value="cuerpo cortado">Cuerpo cortado</option>
+                  <option value="dolor articular">Dolor articular</option>
+                  <option value="dolor de brazo">Dolor brazo</option>
+                  <option value="dolor de cuerpo">Dolor cuerpo</option>
+                  <option value="dolor de garganta">Dolor garganta</option>
+                  <option value="dolor muscular">Dolor muscular</option>
+                  <option value="escalofrio">Escalofrio</option>
+                  <option value="fatiga">Fatiga</option>
+                  <option value="fiebre">Fiebre</option>
+                  <option value="frio">Frio</option>
+                  <option value="gripe">Gripe</option>
+                  <option value="mareo">Mareo</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="sudor">Sudor</option>
+                  <option value="sueño">Sueño</option>
+                  <option value="temperatura">Temperatura</option>
             </select>
         </div>
 
@@ -224,9 +224,10 @@ const Geography = () => {
         <p></p>
         
         <Box
-          height="75vh"
-          border={`1px solid ${colors.grey[100]}`}
-          borderRadius="4px"
+            height="42.5vh"
+            border={`1px solid ${colors.grey[100]}`}
+            borderRadius="5px"
+            style={{ overflow: "hidden" }}
         >
           <GeographyChart effect = {data}/>
         </Box>

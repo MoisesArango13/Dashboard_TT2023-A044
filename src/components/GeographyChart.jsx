@@ -5,6 +5,7 @@ import "leaflet.heat/dist/leaflet-heat.js";
 import axios from 'axios';
 
 const GeographyChart = ({effect}) => {
+  
   const dataRef = useRef([]);
 
   const cityBordersData = 
@@ -120,7 +121,7 @@ const GeographyChart = ({effect}) => {
           // Get the name property from the feature's properties
           const cityName = feature.properties.NOM_MUN;
 
-          const popupContent = `<div style="font-size: 16px; color: red;">${cityName}</div>`;
+          const popupContent = `<div style="font-size: 26px; color: red;">${cityName}</div>`;
           
           // Create a popup with the city name
           layer.bindPopup(popupContent);
@@ -133,8 +134,8 @@ const GeographyChart = ({effect}) => {
       scrollWheelZoom: true,
       }).addTo(map);
 
-
         console.log(dataRef.current);
+
         L.heatLayer(dataRef.current, {
           radius: 50,
           blur: 50,
@@ -147,7 +148,7 @@ const GeographyChart = ({effect}) => {
         }).addTo(map);
       }, 2000); 
 
-  return <div id="map" style={{height: "100vh" }}></div>;
+  return <div id="map" style={{height: "95.5vh" }}></div>;
 };
 
 export default GeographyChart;

@@ -6,7 +6,7 @@ body,
 .app,
 
 .content{
-  height: 100%;
+  height: 100.5%;
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -20,18 +20,19 @@ body,
   width: 10px;
 }
 
-/*Track*/
+/*color del fondo de los scrollbars*/
 ::-webkit-scrollbar-track{
-  background: #e0e0e0;
+  background: #555;
 }
 
-/*Handle*/
+/*color del scrollbar*/
 ::-webkit-scrollbar-thumb{
   background: #888;
 }
 
-/*Handle on Hover*/
+/*cursor sobre el scrollbar*/
 ::-webkit-scrollbar-track:hover{
-  background: #555;
+  background: #dbd1d1;
 }
+
 
