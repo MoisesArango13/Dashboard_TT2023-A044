@@ -11,16 +11,16 @@ const Dashboard = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const colors = tokens(theme.palette.mode);
 
-  const data = [ //parámetros por default 
+  const data = [ //parámetros por default grafica lineal
     'fiebre',
     'dolor de brazo',
     'dolor de cabeza',
-    2021,
+    2020,
   ];
 
   const data2 = [//parámetros por default 
-    'fiebre',
-    'astrazeneca'
+    'sueño',
+    'cansino'
   ];
 
   const data3 = [//parámetros por default 
