@@ -40,9 +40,6 @@ const Sidebar = () => {
     return (
         <Box
           sx = {{
-
-             width: "100%",
-
              "& .pro-sidebar-inner": {
                  background: `${colors.primary[400]} !important`,
              },
@@ -121,7 +118,7 @@ const Sidebar = () => {
                  )}
 
                  {/*Items para nuestro MENU */}
-                 <Box paddingLeft={isCollappsed ? undefined : "6%"}>
+                 <Box paddingLeft={isCollappsed ? undefined : "6%"} sx={{ flexGrow: 1 }}>
                  <Item 
                     title="Inicio"
                     to="/"
