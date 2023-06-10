@@ -17,7 +17,7 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-       <div className="app">
+       <div className="app" style={{ display: "flex", height: "100vh" }}>
         <Sidebar/>
         <main className="content">
           <Topbar />
