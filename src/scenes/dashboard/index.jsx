@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   return (
 
-    <Box m="20px">
+    <Box m="10px">
       
       {/* HEADER */}
 
@@ -50,7 +50,7 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* FILA 1 */}
-        <Box
+        <Box //tweets totales
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -64,7 +64,7 @@ const Dashboard = () => {
           />
         </Box>
 
-        <Box
+        <Box //tweets posibles efectos
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -81,55 +81,62 @@ const Dashboard = () => {
         {/* ROW 2 */}
 
         <Box
-          gridColumn="span 4"
-          gridRow="span 2"
+          gridColumn="span 6"
+          gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
           
           <Typography
-            variant="h5"
+            variant="h6"
             fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
+            sx={{ padding: "20px 10px 0 30px" }}
           >
-            Grafica de barras
+            Gráfica de barras
           </Typography>
-          <Box height="250px" mt="-20px">
+          <Box height="300px" mt="50px">
             <BarChart datos = {data2} isDashboard={true} />
           </Box>
         </Box>
 
       
         {/* ROW 3 */}
-        
-        
-        <Box
+          
+        <Box //mapa de calor
           gridColumn="span 6"
-          gridRow="span 2"
+          gridRow="span 4"
           backgroundColor={colors.primary[400]}
-          padding="30px"
+          padding="15px"
+          height="300vs"
+          border={`1px solid ${colors.grey[100]}`}
+          borderRadius="5px"
+          style={{ overflow: "hidden" }}
         >
           <Typography
             variant="h6"
             fontWeight="600"
             sx={{ marginBottom: "9px" }}
           >
-            Mapa Calor CDMXX
+            Mapa de Calor CDMX
           </Typography>
 
-          <Box height="200vs">
+          <Box 
+            height="200vs"
+            border={`1px solid ${colors.grey[100]}`}
+            borderRadius="5px"
+          >
             <GeographyChart effect = {data3} isDashboard={true} />
           </Box>
 
         </Box>
 
-        <Box
-          gridColumn="span 5"
+        <Box //grafica lineal
+          gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
           <Box
-            mt="25px"
-            p="0 30px"
+            mt="4px"
+            p="1px"
             display="flex "
             justifyContent="space-between"
             alignItems="center"
@@ -147,7 +154,7 @@ const Dashboard = () => {
             
           </Box>
 
-          <Box height="250px" m="-20px 0 0 0">
+          <Box height="230px" m="-10px 50px 0 0">
             <LineChart effects = {data} isDashboard={true} />
           </Box>
         </Box>
