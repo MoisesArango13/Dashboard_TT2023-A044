@@ -11,7 +11,6 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import logoImage from '../../vacunacion.png';
 
 const Item = ({ title, to, icon, selected, setSelected}) => {
     const theme = useTheme();
@@ -96,7 +95,7 @@ const Sidebar = () => {
                         alt ="logo-app"
                         width="130px"
                         height = "130px"
-                        src={logoImage}
+                        src={"../../vacunacion.png"}
                         style={{ cursor: "pointer", borderRadius:"70%"}}
                         />
                     </Box>
