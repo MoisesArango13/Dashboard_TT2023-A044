@@ -159,7 +159,7 @@ const Sidebar = () => {
                     setSelected={setSelected}
                 />
                 <Item 
-                    title="Efectos por coordenadas - Mapa de Calor"
+                    title="Efectos por coordenadas"
                     to="/geography"
                     icon={<MapOutlinedIcon />}
                     selected={selected}
