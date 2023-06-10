@@ -149,7 +149,7 @@ const Geography = () => {
                   <option value="escalofrio">Escalofrio</option>
                   <option value="fatiga">Fatiga</option>
                   <option value="fiebre">Fiebre</option>
-                  <option value="frio">Frio</option>
+                  <option value=" frio">Frio</option>
                   <option value="gripe">Gripe</option>
                   <option value="mareo">Mareo</option>
                   <option value="nausea">Nausea</option>
