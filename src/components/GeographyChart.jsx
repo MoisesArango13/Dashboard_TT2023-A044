@@ -139,7 +139,7 @@ const GeographyChart = ({effect}) => {
         L.heatLayer(dataRef.current, {
           radius: 50,
           blur: 50,
-          maxZoom: 17,
+          maxZoom: 20,
             gradient: {
               0.0: 'rgba(0, 255, 0, 0.5)', // Increased intensity green (RGBA: green with 50% opacity)
               0.5: 'rgba(255, 0, 0, 1.0)', // Increased intensity red (RGBA: yellow with 70% opacity)
