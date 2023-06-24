@@ -93,7 +93,7 @@ const Geography = () => {
         tipo: efecto,
       };
 
-      axios.get('https://t-tserver.vercel.app/tweets_por_efecto', {params:params})
+      axios.get('http://localhost:5000/tweets_por_efecto', {params:params})
         .then(response => {
           let tweets = [];
 

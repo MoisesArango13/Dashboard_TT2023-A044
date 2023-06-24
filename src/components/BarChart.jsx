@@ -20,7 +20,7 @@ const BarChart = ({ datos, isDhasboard = false }) => {
       marca: marca_vacuna
     };
     
-    axios.get('https://t-tserver.vercel.app/efectos_por_marca', {params: params})
+    axios.get('http://localhost:5000/efectos_por_marca', {params: params})
       .then(response => {
         console.log('si')
         const recordsets = response.data;

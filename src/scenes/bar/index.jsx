@@ -144,7 +144,7 @@ const Bar = () =>{
         marca: marca,
       };
 
-      axios.get('https://t-tserver.vercel.app/tweets_por_marca', {params:params})
+      axios.get('http://localhost:5000/tweets_por_marca', {params:params})
         .then(response => {
           let tweets = [];
 

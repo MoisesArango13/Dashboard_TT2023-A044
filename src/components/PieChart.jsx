@@ -16,7 +16,7 @@ const PieChart = ({effect}) => {
       tipo: tipo_efecto,
     };
 
-    axios.get('https://t-tserver.vercel.app/efectos_por_alcaldia', {params: params})
+    axios.get('http://localhost:5000/efectos_por_alcaldia', {params: params})
       .then(response => {
         const recordsets = response.data;
         let alcaldia = recordsets.map(value => value.alcaldia);
